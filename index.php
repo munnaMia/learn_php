@@ -39,7 +39,8 @@
     ];
 
     // lamda function = anonomuys func
-    $Filter = function ($items, $fn) {
+    function Filter($items, $fn)
+    {
         $fillteritems = [];
 
         foreach ($items as $item) {
@@ -51,8 +52,8 @@
         return $fillteritems;
     };
 
-    $autherFilter =  $Filter($books, function ($book) {
-        return $book['auther'] === 'munna'
+    $autherFilter =  Filter($books, function ($book) {
+        return $book['auther'] === 'munna';
     });
 
     ?>
