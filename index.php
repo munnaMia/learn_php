@@ -38,23 +38,27 @@
         ]
     ];
 
-    function autherFilter($books, $auther)
-    {
-        $fillterBooks = [];
+    // lamda function = anonomuys func
+    $Filter = function ($items, $fn) {
+        $fillteritems = [];
 
-        foreach ($books as $book) {
-            if ($book['auther'] === $auther) {
-                $fillterBooks[] = $book; // php append syntax...   
+        foreach ($items as $item) {
+            if ($fn($item)) {
+                $fillteritems[] = $item; // php append syntax...   
             }
         }
 
-        return $fillterBooks;
-    }
+        return $fillteritems;
+    };
+
+    $autherFilter =  $Filter($books, function ($book) {
+        return $book['auther'] === 'munna'
+    });
 
     ?>
 
     <ul>
-        <?php foreach (autherFilter($books, 'munna') as $book): // calling func
+        <?php foreach ($autherFilter as  $book): // calling func
         ?>
             <li>
                 <a href="<?= $book['url'] ?>">
