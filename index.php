@@ -1,61 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<?php
 
-<body>
-    <h1>Test demo</h1>
+$books = [
+    [
+        'name' => 'dopamin diasdtox',
+        'auther' => 'munna',
+        'url' => '#',
+        'year' => 2016
+    ],
+    [
+        'name' => 'dopamin 4r23',
+        'auther' => 'munna',
+        'url' => '#',
+        'year' => 2016
+    ],
+    [
+        'name' => 'bangladesh',
+        'auther' => 'munna',
+        'url' => '#',
+        'year' => 2010
+    ],
+    [
+        'name' => '234234 ditox',
+        'auther' => 'mia',
+        'url' => '#',
+        'year' => 2016
+    ]
+];
 
-    <?php
-    $books = [
-        [
-            'name' => 'dopamin diasdtox',
-            'auther' => 'munna',
-            'url' => '#',
-            'year' => 2016
-        ],
-        [
-            'name' => 'dopamin 4r23',
-            'auther' => 'munna',
-            'url' => '#',
-            'year' => 2016
-        ],
-        [
-            'name' => 'bangladesh',
-            'auther' => 'munna',
-            'url' => '#',
-            'year' => 2010
-        ],
-        [
-            'name' => '234234 ditox',
-            'auther' => 'mia',
-            'url' => '#',
-            'year' => 2016
-        ]
-    ];
+// php default array filter
+$autherFilter =  array_filter($books, callback: function ($book) {
+    return $book['auther'] === 'munna';
+});
 
-    // php default array filter
-    $autherFilter =  array_filter($books, function ($book) {
-        return $book['auther'] === 'munna';
-    });
 
-    ?>
 
-    <ul>
-        <?php foreach ($autherFilter as  $book): // calling func
-        ?>
-            <li>
-                <a href="<?= $book['url'] ?>">
-                    <?= $book['name'] ?> ===== <?= $book['auther'] ?>
-                </a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-
-</body>
-
-</html>
+// Calling view both does the same job.
+// include 'index.view.php';
+require 'index.view.php';
