@@ -11,3 +11,9 @@
 2. $_SERVER - contain the server req informations
 3. var_dump() - dump all info about a variable
 4. "{$var}" - use double quate to inline a variable
+
+## mysql 
+- sudo mysql -uroot -> access mysql db
+- create database myapp -> create a database 
+- PDO (php data object) - is use to connect mysql with php.
+- DSN(data source name) - PDO accept a dsn like we did on golang
