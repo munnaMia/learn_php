@@ -4,7 +4,7 @@
 
 // both syntax are valie
 // $dsn = "mysql:host=localhost;port=3306;dbname=learnPHP;charset=utf8mb4"; // dsn string : mysql:host;port;dbname;charset
-$dsn = "mysql:host=localhost;port=3306;dbname=learnPHP;user=munna;password=;charset=utf8mb4"; // dsn string : mysql:host;port;dbname;charset
+$dsn = "mysql:host=localhost;port=3306;dbname=learnPHP;user=munna;password=3m@MJ#Sha4787mu;charset=utf8mb4"; // dsn string : mysql:host;port;dbname;charset
 
 // both syntax are valie
 // $pdo = new PDO($dsn, 'munna', '3m@MJ#Sha4787mu');
