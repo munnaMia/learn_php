@@ -9,6 +9,8 @@ require 'database.php';
 
 // connect to database
 
-$db = new Database();
+$config = require('config.php');
+
+$db = new Database($config, 'munna', '3m@MJ#Sha4787mu');
 
 dumpAndDie($db->query("SELECT * FROM post;")->fetchAll());
