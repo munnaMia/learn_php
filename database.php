@@ -6,8 +6,7 @@ class Database
     // its called a constructor it called auto matically
     public function __construct($config, $username='root', $password='')
     {
-        $dsn = "mysql:" . http_build_query($config, '', ';'); // return host=localhost;port=3306;dbname=learnPHP;charset=utf8mb4
-//
+        $dsn = "mysql:" . http_build_query($config['database'], '', ';'); // return host=localhost;port=3306;dbname=learnPHP;charset=utf8mb4
         $this->connection = new PDO($dsn, $username, $password, [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ]);

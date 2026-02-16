@@ -7,10 +7,15 @@ require 'database.php';
 // require 'router.php';
 
 
+$id = $_GET['id']; // localhost:8080/?id=2 
+
 // connect to database
 
 $config = require('config.php');
 
 $db = new Database($config, 'munna', '3m@MJ#Sha4787mu');
 
-dumpAndDie($db->query("SELECT * FROM post;")->fetchAll());
+
+$query = "SELECT * FROM post WHERE id = {$id};";
+dumpAndDie($query);
+dumpAndDie($db->query($query)->fetch());

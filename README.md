@@ -14,6 +14,10 @@
 4. "{$var}" - use double quate to inline a variable
 5. PDO::FETCH_ASSOC - here :: this thing known as scope resulation operator underhood a const class property set
 6. CONST value are upper case
+7. localhost:8080/?id=1 => here a user can send some sql instruction like drop table or like this is known as sql injuction attack so always sanitize user given data
+    - like this : http://localhost:8080/?id=3;drop table post
+        - "SELECT * FROM post WHERE id = 3; drop table post;" triger this
+
 ## mysql 
 - sudo mysql -uroot -> access mysql db
 - create database myapp -> create a database 
