@@ -16,7 +16,12 @@
 6. CONST value are upper case
 7. localhost:8080/?id=1 => here a user can send some sql instruction like drop table or like this is known as sql injuction attack so always sanitize user given data
     - like this : http://localhost:8080/?id=3;drop table post
-        - "SELECT * FROM post WHERE id = 3; drop table post;" triger this
+        - "SELECT * FROM post WHERE id = 3; drop table post;" triger this and delete and table
+    - $query = "SELECT * FROM post WHERE id = {$id};"; // never ever inline a data from user in sql query
+    - do this insted:
+        - $query = "SELECT * FROM post WHERE id = ?;";  OR ? (or :id) use a key
+        - $query = "SELECT * FROM post WHERE id = :id;"; in this case pass an assosArray on exicute params like 'id' => $id OR ':id' => $id
+    
 
 ## mysql 
 - sudo mysql -uroot -> access mysql db

@@ -16,6 +16,6 @@ $config = require('config.php');
 $db = new Database($config, 'munna', '3m@MJ#Sha4787mu');
 
 
-$query = "SELECT * FROM post WHERE id = {$id};";
-dumpAndDie($query);
-dumpAndDie($db->query($query)->fetch());
+$query = "SELECT * FROM post WHERE id = :id;"; // never ever inline a data from user in sql query try to use ? and pass data on query exicute fn
+
+dumpAndDie($db->query($query, [":id" => $id])->fetch());

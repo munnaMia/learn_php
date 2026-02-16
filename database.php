@@ -12,11 +12,11 @@ class Database
         ]);
     }
 
-    public function query($query)
+    public function query($query, $param = [])
     {
         $statement = $this->connection->prepare($query);
 
-        $statement->execute();
+        $statement->execute($param);
 
         // return $statement->fetch(PDO::FETCH_ASSOC); // in normal fetcing we got result in both assosArray and index array from 
         return $statement; // in normal fetcing we got result in both assosArray and index array from 
